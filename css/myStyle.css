@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     font-family: sans-serif;
+    animation: all 0.5s;
 }
 
 #header {
@@ -12,7 +13,7 @@ body {
 
 #container {
     width: 100%;
-    height: 1000px;
+    height: 800px;
     overflow: hidden;
 }
 
@@ -56,7 +57,7 @@ body {
 }
 
 .paralax {
-    height: 1000px;
+    height: 800px;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -93,11 +94,13 @@ body {
 #para2 {
     background-image: url("../img/img0.jpg");
     position: relative;
+    transition: background 1s;
 }
 
 #para3 {
     background-image: url("../img/Laputa.jpg");
     position: relative;
+    height: 800px;
 }
 
 #musicPlayer {
@@ -112,6 +115,7 @@ body {
     /*thay đổi vị trí so với vật chủ, trừ đi 50% của chính nó để dịch qua lại 50% thì nằm ngay giữa do khi left 50% chỉ có cạnh trái đứng giữa*/
     transform: translate(-50%, 50%);
     text-shadow: rgba(0, 100, 255, 1) 0px 0px 100px;
+    z-index: 2;
 }
 
 #prevButton {
@@ -122,6 +126,7 @@ body {
     /*thay đổi vị trí so với vật chủ, trừ đi 50% của chính nó để dịch qua lại 50% thì nằm ngay giữa do khi left 50% chỉ có cạnh trái đứng giữa*/
     transform: translate(-50%, 50%);
     text-shadow: rgba(0, 100, 255, 1) 0px 0px 100px;
+    z-index: 2;
 }
 
 #nextButton {
@@ -132,10 +137,14 @@ body {
     /*thay đổi vị trí so với vật chủ, trừ đi 50% của chính nó để dịch qua lại 50% thì nằm ngay giữa do khi left 50% chỉ có cạnh trái đứng giữa*/
     transform: translate(-50%, 50%);
     text-shadow: rgba(0, 100, 255, 1) 0px 0px 100px;
+    z-index: 2;
 }
 
 #musicList {
     height: 600px;
+    background-image: url("../img/img0.jpg");
+    position: relative;
+    transition: background 1s;
 }
 
 .song {

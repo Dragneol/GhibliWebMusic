@@ -19,6 +19,7 @@ function generateSong() {
         playButton.id = songList[i].id;
         playButton.classList.add("fa", "fa-youtube-play", "fa-3x", "open");
         playButton.addEventListener('click', play(playButton.id));
+
         tag.appendChild(playButton);
         div_list.appendChild(tag);
 
@@ -47,9 +48,15 @@ function playPrev() {
 function getLink() {
     var mp3File = songList[idPlayer].mp3;
     var jpgFile = songList[idPlayer].img;
-    var screen = document.getElementById('para2');
-    screen.style.backgroundImage = 'url("' + jpgFile + '")';
+    changeImage(jpgFile);
     changeMusic(mp3File);
+}
+
+function changeImage(url) {
+    var screen = document.getElementById('para2');
+    screen.style.backgroundImage = 'url("' + url + '")';
+    screen = document.getElementById('musicList');
+    screen.style.backgroundImage = 'url("' + url + '")';
 }
 
 function changeMusic(url) {
