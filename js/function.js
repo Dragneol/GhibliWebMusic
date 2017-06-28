@@ -7,11 +7,22 @@ function generateSong() {
     var div_list = document.getElementById("musicList");
     for (var i = 0; i < songList.length; i++) {
         var tag = document.createElement("div");
-        tag.id = songList[i].id;
+
+        var name = document.createElement("p");
+        name.textContent = songList[i].tile;
+        tag.appendChild(name);
+
         tag.className = "song";
         tag.style.backgroundImage = "url(" + songList[i].img + ")";
-        tag.addEventListener('click', play(tag.id));
+
+        var playButton = document.createElement('i');
+        playButton.className = "fa fa-youtube-play";
+        playButton.id = songList[i].id;
+        tag.appendChild(playButton);
+
+        playButton.addEventListener('click', play(playButton.id));
         div_list.appendChild(tag);
+
     }
 }
 
@@ -36,6 +47,9 @@ function playPrev() {
 
 function getLink() {
     var mp3File = songList[idPlayer].mp3;
+    var jpgFile = songList[idPlayer].img;
+    var screen = document.getElementById('para2');
+    screen.style.backgroundImage = 'url("' + jpgFile + '")';
     changeMusic(mp3File);
 }
 
@@ -45,6 +59,9 @@ function changeMusic(url) {
     controller.src = url;
     playStatus = true;
     push();
+    controller.onended = function () {
+        playNext();
+    }
 }
 
 function push() {

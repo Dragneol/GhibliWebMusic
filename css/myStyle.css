@@ -139,6 +139,7 @@ body {
 }
 
 .song {
+    position: relative;
     width: 20%;
     margin-top: 100px;
     margin-left: 4%;
@@ -157,6 +158,16 @@ body {
 .song:hover {
     cursor: pointer;
     opacity: 0.7;
+    transform: scale(1.2, 1.2);
+}
+
+.song > p {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-25%, 50%);
+    color: #FFF;
 }
 
 #order {
@@ -190,4 +201,9 @@ body {
     left: 75%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+.open {
+    font-size: 200px;
+    position: absolute;
 }
