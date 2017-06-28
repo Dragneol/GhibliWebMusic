@@ -1,0 +1,193 @@
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+#header {
+    width: 400%;
+    height: 1000px;
+    position: relative;
+    animation: slideshow 10s linear infinite;
+}
+
+#container {
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+}
+
+@keyframes slideshow {
+    0% {
+        left: -150%;
+    }
+    5% {
+        left: 0;
+    }
+    20% {
+        left: 0%;
+    }
+    30% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    55% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    80% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -150%;
+    }
+}
+
+.non-paralax {
+    background-color: #dddddd;
+    height: 100px;
+    width: 100%;
+}
+
+.paralax {
+    height: 1000px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#para1 {
+    background-image: url("../img/GhibliStudio(1).png");
+    background-color: rgb(0, 157, 241);
+    background-size: contain;
+    float: left;
+    width: 25%;
+}
+
+#para1-2 {
+    background-image: url("../img/GhibliCharacter.jpg");
+    float: left;
+    width: 25%;
+}
+
+#para1-3 {
+    background-image: url("../img/JoeHisaishi.jpg");
+    float: left;
+    width: 25%;
+}
+
+#para1-4 {
+    background-image: url("../img/musicsheet.jpg");
+    float: left;
+    width: 25%;
+}
+
+#para2 {
+    background-image: url("../img/img0.jpg");
+    position: relative;
+}
+
+#para3 {
+    background-image: url("../img/Laputa.jpg");
+    position: relative;
+}
+
+#musicPlayer {
+    visibility: hidden;
+}
+
+#playButton {
+    font-size: 200px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    /*thay đổi vị trí so với vật chủ, trừ đi 50% của chính nó để dịch qua lại 50% thì nằm ngay giữa do khi left 50% chỉ có cạnh trái đứng giữa*/
+    transform: translate(-50%, 50%);
+    text-shadow: rgba(0, 100, 255, 1) 0px 0px 100px;
+}
+
+#prevButton {
+    font-size: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 25%;
+    /*thay đổi vị trí so với vật chủ, trừ đi 50% của chính nó để dịch qua lại 50% thì nằm ngay giữa do khi left 50% chỉ có cạnh trái đứng giữa*/
+    transform: translate(-50%, 50%);
+    text-shadow: rgba(0, 100, 255, 1) 0px 0px 100px;
+}
+
+#nextButton {
+    font-size: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 75%;
+    /*thay đổi vị trí so với vật chủ, trừ đi 50% của chính nó để dịch qua lại 50% thì nằm ngay giữa do khi left 50% chỉ có cạnh trái đứng giữa*/
+    transform: translate(-50%, 50%);
+    text-shadow: rgba(0, 100, 255, 1) 0px 0px 100px;
+}
+
+#musicList {
+    height: 600px;
+}
+
+.song {
+    width: 20%;
+    margin-top: 100px;
+    margin-left: 4%;
+    float: left;
+    height: 150px;
+    border: solid 1px black;
+    box-shadow: rgba(155, 155, 0, 1) 2px 2px 5px;
+    transition: all;
+    overflow: hidden;
+    background-size: cover;
+    background-attachment: local;
+    animation-duration: 0.3s;
+    transition: all;
+}
+
+.song:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#order {
+    width: 90%;
+    height: 90%;
+    opacity: 0.25;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #f8f8f8 center;
+}
+
+#form {
+    width: 40%;
+    float: left;
+    height: 95%;
+    opacity: 2;
+    box-shadow: grey 10px 10px 10px;
+    margin-top: 2%;
+    margin-left: 10%;
+    border: solid 1px blue;
+}
+
+#songInfo {
+    width: 40%;
+    height: 500px;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

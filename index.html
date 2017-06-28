@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ghibli Song Collection</title>
+    <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="js/function.js"></script>
+    <script src="js/data.js"></script>
+</head>
+
+<body onload="generateSong()">
+<div id="container">
+    <div id="header">
+        <div class="paralax" id="para1"></div>
+        <div class="paralax" id="para1-2"></div>
+        <div class="paralax" id="para1-3"></div>
+        <div class="paralax" id="para1-4"></div>
+    </div>
+</div>
+<div class="non-paralax"></div>
+<div class="paralax" id="para2">
+    <audio controls id="musicPlayer">
+        <source src="music/song0.mp3" type="audio/mp3"></source>
+    </audio>
+    <i class="fa fa-backward" id="prevButton" onclick="playPrev()"></i>
+    <i class="fa fa-play-circle-o" id="playButton" onclick="push()"></i>
+    <i class="fa fa-forward" id="nextButton" onclick="playNext()"></i>
+</div>
+<div class="non-paralax" id="musicList"></div>
+<div class="paralax" id="para3">
+    <div id="order">
+        <form id="form" action="#" method="post"></form>
+        <div id="songInfo"></div>
+    </div>
+</div>
+
+<div class="non-paralax"></div>
+
+</body>
+
+</html>
