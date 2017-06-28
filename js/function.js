@@ -15,12 +15,11 @@ function generateSong() {
         tag.className = "song";
         tag.style.backgroundImage = "url(" + songList[i].img + ")";
 
-        var playButton = document.createElement('i');
-        playButton.className = "fa fa-youtube-play";
+        var playButton = document.createElement('div');
         playButton.id = songList[i].id;
-        tag.appendChild(playButton);
-
+        playButton.classList.add("fa", "fa-youtube-play", "fa-3x", "open");
         playButton.addEventListener('click', play(playButton.id));
+        tag.appendChild(playButton);
         div_list.appendChild(tag);
 
     }
