@@ -1,30 +1,44 @@
+::-webkit-scrollbar {
+    width: 0%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
 }
 
 header {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 700px;
-    overflow: hidden
-    
+    height: 100%;
+    overflow: hidden;
+    background-image: url("../img/sky.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
 }
 
 header img {
     position: absolute;
-    right:-15%;
-    bottom: 0px;
+    right: -15%;
     height: 100%;
-    z-index: 2;
+    z-index: 0;
 }
 
 #artist {
     position: absolute;
     font-family: Courgette;
     font-size: 10em;
-    z-index: 3;
-    top: 5px;
+    z-index: 5!important;
+    top: 12%;
     color: #3355ff;
 }
 
@@ -32,8 +46,301 @@ header img {
     position: absolute;
     font-family: Verdana, sans-serif;
     font-size: 2.5em;
-    letter-spacing: 30px;
-    top: 290px;
+    letter-spacing: 29px;
+    top: 52.5%;
     color: #444443;
     text-transform: uppercase;
+}
+
+.head {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    position: absolute;
+    color: white !important;
+    text-shadow: #333 0px 0px 20px;
+    text-decoration-line: none;
+}
+
+.tile {
+    position: absolute;
+    font-family: Courgette;
+    font-size: 10em;
+    z-index: 5!important;
+    top: 12%;
+    left: 26%;
+    color: white;
+    text-shadow: #333 0px 0px 20px;
+    transform: translateX(-50%);
+}
+
+.button {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    z-index: 4;
+}
+
+.voezStyle {
+    border: 5px solid #ffffff;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    transform: translate(-30%, -12%) rotate(45deg);
+    box-shadow: #333 0px 0px 20px;
+}
+
+.tileDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    opacity: 1;
+    transition: transform 2s ease-in-out, opacity 1s linear;
+}
+
+#playDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 1s linear;
+}
+
+#saleDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 200%;
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 1s linear;
+}
+
+#menuMusic {
+    position: absolute;
+    left: -25%;
+    width: 25%;
+    height: 100%;
+    transition: left 0.5s;
+    background-color: #fff;
+}
+
+#musicList {
+    position: absolute;
+    right: -12%;
+    bottom: 50%;
+}
+
+#list {
+    position: relative;
+    padding: 0% 5%;
+}
+
+#list>li {
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    list-style-type: none;
+    font-size: 1.2em;
+    height: 7%;
+    width: 100%;
+    margin: 2% 0%;
+    overflow: visible;
+    color: #333;
+    line-height: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    /*border-left: 3px solid #333;
+    border-top: 3px solid #333;
+    border-bottom: 3px solid #333;
+    background: linear-gradient(to right, rgba(50, 100, 255, 0.5), rgba(0, 0, 0, 0));*/
+    transition: width 1s ease;
+    box-sizing: border-box;
+    /*transition: height 0.5s ease, background 0.5s ease, line-height 0.5s ease;*/
+}
+
+
+/*#list>li:hover {
+    width: 100%;
+    border-left: 0px solid #333;
+    height: 10%;
+    line-height: 15%;
+    background: linear-gradient(to right, rgba(255, 165, 75, 0.8), rgba(0, 0, 0, 0));
+}*/
+
+#list>li>p {
+    position: absolute;
+    width: 200px;
+    padding-left: 12px;
+    margin: 0px;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+#main {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    width: 100%;
+    height: 200%;
+    border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
+    transition: width 0.5s, border-radius 0.5s;
+    background-color: #68F;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+#info {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background-color: #445;
+}
+
+#playScreen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+#musicPlayer {
+    position: absolute;
+    display: none;
+}
+
+#main>img {
+    position: absolute;
+    height: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contain_spin {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    overflow: visible;
+    visibility: visible;
+}
+
+.div_spin {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0%;
+    left: 0%;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    overflow: visible;
+    animation: spin 1s infinite;
+}
+
+.in_div_spin {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.in1 {
+    animation: in1 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+}
+
+.in2 {
+    animation: in2 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+}
+
+.in3 {
+    animation: in3 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+}
+
+.in4 {
+    animation: in4 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(225deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes in1 {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -140%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes in2 {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, 40%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes in3 {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-140%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes in4 {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.decoration {
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 50%;
+    border: 1.5px solid black;
+    transition: all 1.5s ease-in-out;
 }
