@@ -246,7 +246,7 @@ header img {
     box-sizing: border-box;
     transform: rotate(45deg);
     overflow: visible;
-    animation: spin 1s infinite;
+    animation: spin 2s infinite;
 }
 
 .in_div_spin {
@@ -261,19 +261,19 @@ header img {
 }
 
 .in1 {
-    animation: in1 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+    animation: in1 2s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
 }
 
 .in2 {
-    animation: in2 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+    animation: in2 2s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
 }
 
 .in3 {
-    animation: in3 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+    animation: in3 2s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
 }
 
 .in4 {
-    animation: in4 1s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
+    animation: in4 2s cubic-bezier(0.5, -0.5, 0.5, 1) infinite;
 }
 
 @keyframes spin {
@@ -338,9 +338,33 @@ header img {
 
 .decoration {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: -50%;
     width: 50%;
     border: 1.5px solid black;
-    transition: left 1s ease-in-out;
+    transition: left 0.5s ease-in-out;
+}
+
+.contain_square {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    overflow: visible;
+}
+
+.square {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0%;
+    left: 0%;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    overflow: visible;
+    border: 1.5px solid black;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }

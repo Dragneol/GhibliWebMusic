@@ -8,6 +8,7 @@ var changing;
 var idPlayer = 0;
 var spin;
 var line;
+var square;
 
 function scrollPage(numPage) {
     check = setInterval(scroll, 11, numPage);
@@ -105,8 +106,11 @@ function decorateList() {
 
     // turnOffAnimation();
 
-    spin = document.getElementById("list").querySelectorAll(".contain_spin");
-    line = document.getElementById("list").querySelectorAll(".decoration");
+    // spin = document.getElementById("list").querySelectorAll(".contain_spin");
+    spin = document.getElementsByClassName("contain_spin");
+    // line = document.getElementById("list").querySelectorAll(".decoration");
+    line = document.getElementsByClassName("decoration");
+    square = document.getElementsByClassName("square");
 
     for (var i = 1; i < 9; i++) {
         var stt = i;
@@ -135,9 +139,11 @@ function play(id) {
 function choose() {
     spin[idPlayer].style.visibility = "visible";
     line[idPlayer].style.left = "-100%";
+    square[idPlayer].style.opacity = "0";
 }
 
 function unChoose() {
     spin[idPlayer].style.visibility = "hidden";
     line[idPlayer].style.left = "-50%";
+    square[idPlayer].style.opacity = "1";
 }
