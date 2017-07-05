@@ -37,7 +37,7 @@ header img {
     position: absolute;
     font-family: Courgette;
     font-size: 10em;
-    z-index: 5!important;
+    z-index: 5 !important;
     top: 12%;
     color: #3355ff;
 }
@@ -58,10 +58,19 @@ header img {
     height: 100%;
 }
 
-.icon {
+.headerIcon {
     position: absolute;
     color: white !important;
-    text-shadow: #333 0px 0px 20px;
+    text-shadow: #666 0px 0px 50px;
+    text-decoration-line: none;
+}
+
+.buttonIcon {
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    color: white !important;
+    text-shadow: #666 0px 0px 50px;
     text-decoration-line: none;
 }
 
@@ -69,7 +78,7 @@ header img {
     position: absolute;
     font-family: Courgette;
     font-size: 10em;
-    z-index: 5!important;
+    z-index: 5 !important;
     top: 12%;
     left: 26%;
     color: white;
@@ -91,6 +100,7 @@ header img {
     height: 100px;
     transform: translate(-30%, -12%) rotate(45deg);
     box-shadow: #333 0px 0px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .tileDiv {
@@ -130,9 +140,24 @@ header img {
 }
 
 #musicList {
+    cursor: pointer;
     position: absolute;
-    right: -12%;
-    bottom: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    right: 0%;
+    transform: translate(50%, -50%) rotate(90deg);
+    background-color: #f55;
+    z-index: 6;
+}
+
+#musicList div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
 }
 
 #list {
@@ -161,6 +186,7 @@ header img {
     background: linear-gradient(to right, rgba(50, 100, 255, 0.5), rgba(0, 0, 0, 0));*/
     transition: width 1s ease;
     box-sizing: border-box;
+    z-index: 5;
     /*transition: height 0.5s ease, background 0.5s ease, line-height 0.5s ease;*/
 }
 
@@ -371,7 +397,174 @@ header img {
 
 #decorationButton {
     position: absolute;
+    width: 100%;
+    height: 30%;
     left: 50%;
-    bottom: 20%;
+    bottom: -20%;
     transform: translate(-50%, -50%);
+}
+
+#decorationButton .voezStyle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    box-shadow: none;
+    border: 10px solid rgba(50, 50, 50, 0.5);
+    box-sizing: border-box;
+}
+
+#b1 {
+    left: 0px;
+    bottom: 0px;
+    /* background-color: rgba(50, 50, 250, 0.5); */
+}
+
+#b2 {
+    left: 110px;
+    bottom: 110px;
+    border: 10px solid rgba(50, 100, 255, 0.5) !important;
+}
+
+#b3 {
+    left: 220px;
+    bottom: 0px;
+    border: 10px solid rgba(255, 100, 50, 0.5) !important;
+}
+
+#b4 {
+    left: 330px;
+    bottom: 110px;
+    /* background-color: rgba(250, 100, 0, 0.5); */
+}
+
+#playButton {
+    overflow: visible;
+    position: absolute;
+    right: 150px;
+    bottom: 150px;
+}
+
+
+/* #playButton div {
+    width: 150px;
+    height: 150px;
+}
+
+#playButton>div>i {
+    width: 100px;
+    height: 100px;
+}*/
+
+#playBar {
+    position: absolute;
+    width: 500px;
+    height: 20px;
+    right: 200px;
+    bottom: 102px;
+    /* transform: translate(-100%, -50%); */
+    border-radius: 10px;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+}
+
+@keyframes playingSong {
+    0% {
+        background-position: -20px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
+
+#progress {
+    /* transition: width 200ms linear; */
+    display: block;
+    height: 10px;
+    width: 0%;
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    ;
+    border-radius: 10px;
+    /* animation: loadingStripes 700ms linear infinite; */
+}
+
+#iconInPlayButton {
+    visibility: visible;
+}
+
+#iconInPauseButton {
+    visibility: hidden;
+}
+
+.contain_object {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.contain_object img {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transition: top 1s ease, left 1s ease, opacity 1s ease;
+}
+
+#objimg1-1 {
+    height: 130%;
+    transform: translate(-60%, 0%);
+}
+
+#objimg2-2 {
+    height: 130%;
+    transform: translate(-50%, 0%);
+}
+
+#objimg3-3 {
+    height: 110%;
+    transition: top 5s cubic-bezier(0, 0.5, 0.3, 1), left 5s cubic-bezier(0, 0.5, 0.3, 1), opacity 1s ease;
+    transform: translate(-50%, 0%);
+}
+
+#objimg5-5 {
+    height: 90%;
+    transform: translate(70%, 0%) rotateY(180deg);
+    transition: top 5s cubic-bezier(0, 0.5, 0.3, 1), left 5s cubic-bezier(0, 0.5, 0.3, 1), opacity 1s ease;
+}
+
+#objimg6-6 {
+    height: 100%;
+    transform: translate(30%, 50%);
+}
+
+#objimg7-7 {
+    height: 100%;
+    transform: translate(100%, 25%);
+    transition: top 5s cubic-bezier(0, 0.5, 0.3, 1), left 5s cubic-bezier(0, 0.5, 0.3, 1), opacity 1s ease;
+}
+
+#objimg8-1 {
+    height: 150%;
+    transform: translate(-30%, -20%);
+}
+
+#objimg8-2 {
+    height: 130%;
+    transform: translate(-10%, -20%);
+}
+
+#blend {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 1s ease;
 }

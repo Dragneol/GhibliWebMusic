@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<body onload="showNextSlide();decorateList();" onmousewheel="clearScrollPage()">
+<body onload="showNextSlide();decorateList();showList()" onmousewheel="clearScrollPage()">
     <header>
         <div class="tileDiv" id="tileDiv2">
             <div class="head">
@@ -32,11 +32,11 @@
             </div>
 
             <div class="button">
-                <i class="fa fa-play fa-5x icon"></i>
+                <div class="voezStyle"></div>
             </div>
 
             <div class="button">
-                <div class="voezStyle"></div>
+                <i class="fa fa-play fa-5x headerIcon"></i>
             </div>
 
         </div>
@@ -45,24 +45,35 @@
             <div class="head">
                 <p class="tile">Subcribe</p>
             </div>
-            <div class="button"><i class="fa fa-usd fa-5x icon"></i></div>
+
             <div class="button">
                 <div class="voezStyle"></div>
             </div>
+
+            <div class="button"><i class="fa fa-usd fa-5x headerIcon"></i></div>
+
         </div>
 
     </header>
     <div id="info"></div>
     <div id="playScreen">
-        <audio controls id="musicPlayer">
+        <audio controls id="musicPlayer" ontimeupdate="updateProgress()">
             <source src="music/song1.mp3" type="audio/mp3"></source>
         </audio>
 
-        <div id="main">
-            <img src="img/1.png" alt="">
-        </div>
+
+
+
         <div id="menuMusic">
-            <div class="fa fa-3x fa-outdent" id="musicList" onclick="showList()"></div>
+            <div id="musicList" onclick="showList()">
+                <div class="fa fa-4x fa-sort"></div>
+            </div>
+            <div id="decorationButton">
+                <div class="voezStyle" id="b1"></div>
+                <div class="voezStyle" id="b2"></div>
+                <div class="voezStyle" id="b3"></div>
+                <div class="voezStyle" id="b4"></div>
+            </div>
             <ul id="list">
                 <li id="li1">
                     <div class="decoration"></div>
@@ -185,17 +196,38 @@
                     </div>
                 </li>
             </ul>
-            <div id="decorationButton">
-                <div class="button">
-                    <i class="fa fa-play fa-5x icon"></i>
-                </div>
 
-                <div class="button">
-                    <div class="voezStyle"></div>
-                </div>
-            </div>
         </div>
+        <div id="main">
+            <img src="img/1.png" alt="">
+            <div id="blend"></div>
+        </div>
+        <div class="contain_object">
+            <img src="img/1-1.png" id="objimg1-1">
+            <img src="img/2-2.png" id="objimg2-2">
+            <img src="img/3-3.png" id="objimg3-3">
+            <img src="img/5-5.png" id="objimg5-5">
+            <img src="img/6-6.png" id="objimg6-6">
+            <img src="img/7-7.png" id="objimg7-7">
+            <img src="img/8-1.png" id="objimg8-1">
+            <img src="img/8-2.png" id="objimg8-2">
+        </div>
+        <div id="playButton" onclick="runProcess()">
+            <div class="button">
+                <div class="voezStyle"></div>
+            </div>
 
+            <div class="button">
+                <i class="fa fa-play fa-5x headerIcon" id="iconInPlayButton"></i>
+            </div>
+            <div class="button">
+                <i class="fa fa-pause fa-4x buttonIcon" id="iconInPauseButton"></i>
+            </div>
+
+        </div>
+        <div id="playBar" onclick="changeProgress(event)">
+            <div id="progress"></div>
+        </div>
     </div>
     <footer></footer>
 </body>

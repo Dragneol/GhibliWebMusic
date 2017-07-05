@@ -53,7 +53,7 @@ const songList = [{
     {
         id: "li8",
         tile: "Umi No Mieru Machi",
-        img: "img/8.jpg",
+        img: "img/8.png",
         mp3: "music/song8.mp3",
         lyric: ""
     },

@@ -9,6 +9,7 @@ var idPlayer = 0;
 var spin;
 var line;
 var square;
+var playStatus = false;
 
 function scrollPage(numPage) {
     check = setInterval(scroll, 11, numPage);
@@ -123,7 +124,6 @@ function decorateList() {
         spin[i - 1].style.visibility = "hidden";
 
     }
-    choose();
 }
 
 function play(id) {
@@ -133,6 +133,15 @@ function play(id) {
         choose();
         var screen = document.getElementById("main");
         screen.firstElementChild.src = "" + songList[idPlayer].img;
+        var controller = document.getElementById("musicPlayer");
+        controller.src = songList[idPlayer].mp3;
+        controller.play();
+        playStatus = true;
+        var buttonPlay = document.getElementById("iconInPlayButton");
+        var buttonPause = document.getElementById("iconInPauseButton");
+        buttonPlay.style.visibility = "hidden";
+        buttonPause.style.visibility = "visible";
+        // runProcess();
     };
 }
 
@@ -140,10 +149,88 @@ function choose() {
     spin[idPlayer].style.visibility = "visible";
     line[idPlayer].style.left = "-100%";
     square[idPlayer].style.opacity = "0";
+    chooseEffect(idPlayer + 1, true);
 }
 
 function unChoose() {
     spin[idPlayer].style.visibility = "hidden";
     line[idPlayer].style.left = "-50%";
     square[idPlayer].style.opacity = "1";
+    chooseEffect(idPlayer + 1, false);
+}
+
+function runProcess() {
+    var buttonPlay = document.getElementById("iconInPlayButton");
+    var buttonPause = document.getElementById("iconInPauseButton");
+    var audio = document.getElementById("musicPlayer");
+    if (!playStatus) {
+        playStatus = true;
+        choose();
+        buttonPlay.style.visibility = "hidden";
+        buttonPause.style.visibility = "visible";
+        audio.play();
+    } else {
+        playStatus = false;
+        spin[idPlayer].style.visibility = "hidden";
+        square[idPlayer].style.opacity = "1";
+        buttonPause.style.visibility = "hidden";
+        buttonPlay.style.visibility = "visible";
+        audio.pause();
+    }
+}
+
+function updateProgress() {
+    var audio = document.getElementById("musicPlayer");
+    document.getElementById("progress").style.width = (audio.currentTime / audio.duration * 100) + "%";
+}
+
+function changeProgress(event) {
+    var playBar = document.getElementById("playBar");
+    var x = event.clientX - playBar.offsetLeft;
+    var audio = document.getElementById("musicPlayer");
+    audio.currentTime = x / playBar.offsetWidth * audio.duration;
+}
+
+function showObject(tagId, startX, startY, endX, endY, isShow, isBlend) {
+    var tag = document.getElementById(tagId);
+    if (isShow) {
+        tag.style.left = endX + "%";
+        tag.style.top = endY + "%";
+        tag.style.opacity = 1;
+        if (isBlend)
+            document.getElementById("blend").style.opacity = 0.5;
+    } else {
+        tag.style.left = startX + "%";
+        tag.style.top = startY + "%";
+        tag.style.opacity = 0;
+        if (isBlend)
+            document.getElementById("blend").style.opacity = 0;
+    }
+}
+
+function chooseEffect(idPlay, isShow) {
+    switch (idPlay) {
+        case 1:
+            showObject("objimg1-1", 0, 0, 50, 0, isShow, true);
+            break;
+        case 2:
+            showObject("objimg2-2", 0, 0, 30, 0, isShow, true);
+            break;
+        case 3:
+            showObject("objimg3-3", 30, 0, 60, 0, isShow, false);
+            break;
+        case 5:
+            showObject("objimg5-5", 0, -10, 0, 30, isShow, false);
+            break;
+        case 6:
+            showObject("objimg6-6", 0, 0, -15, -40, isShow, false);
+            break;
+        case 7:
+            showObject("objimg7-7", 0, 0, -50, 0, isShow, false);
+            break;
+        case 8:
+            showObject("objimg8-1", 0, 0, 10, 10, isShow, true);
+            showObject("objimg8-2", 0, 0, 10, 5, isShow, true);
+            break;
+    }
 }
