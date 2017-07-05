@@ -342,5 +342,5 @@ header img {
     left: -50%;
     width: 50%;
     border: 1.5px solid black;
-    transition: all 1.5s ease-in-out;
+    transition: left 1s ease-in-out;
 }
