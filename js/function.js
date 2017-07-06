@@ -126,23 +126,46 @@ function decorateList() {
     }
 }
 
+function playASong() {
+    playStatus = true;
+    var buttonPlay = document.getElementById("iconInPlayButton");
+    var buttonPause = document.getElementById("iconInPauseButton");
+    buttonPlay.style.visibility = "hidden";
+    buttonPause.style.visibility = "visible";
+    var screen = document.getElementById("main");
+    screen.firstElementChild.src = "" + songList[idPlayer].img;
+    var controller = document.getElementById("musicPlayer");
+    controller.src = songList[idPlayer].mp3;
+    controller.play();
+}
+
 function play(id) {
     return function() {
         unChoose();
         idPlayer = id - 1;
         choose();
-        var screen = document.getElementById("main");
-        screen.firstElementChild.src = "" + songList[idPlayer].img;
-        var controller = document.getElementById("musicPlayer");
-        controller.src = songList[idPlayer].mp3;
-        controller.play();
-        playStatus = true;
-        var buttonPlay = document.getElementById("iconInPlayButton");
-        var buttonPause = document.getElementById("iconInPauseButton");
-        buttonPlay.style.visibility = "hidden";
-        buttonPause.style.visibility = "visible";
+        playASong();
         // runProcess();
     };
+}
+
+function playNext() {
+    unChoose();
+    idPlayer++;
+    choose();
+    playASong();
+}
+
+function stop() {
+    unChoose();
+    playStatus = false;
+    var buttonPlay = document.getElementById("iconInPlayButton");
+    var buttonPause = document.getElementById("iconInPauseButton");
+    buttonPlay.style.visibility = "visible";
+    buttonPause.style.visibility = "hidden";
+    var controller = document.getElementById("musicPlayer");
+    controller.pause();
+    controller.currentTime = 0;
 }
 
 function choose() {
@@ -182,6 +205,7 @@ function runProcess() {
 function updateProgress() {
     var audio = document.getElementById("musicPlayer");
     document.getElementById("progress").style.width = (audio.currentTime / audio.duration * 100) + "%";
+    if (audio.currentTime == audio.duration) playNext();
 }
 
 function changeProgress(event) {

@@ -55,14 +55,16 @@
         </div>
 
     </header>
+
+
     <div id="info"></div>
+
+
     <div id="playScreen">
+
         <audio controls id="musicPlayer" ontimeupdate="updateProgress()">
             <source src="music/song1.mp3" type="audio/mp3"></source>
         </audio>
-
-
-
 
         <div id="menuMusic">
             <div id="musicList" onclick="showList()">
@@ -198,10 +200,12 @@
             </ul>
 
         </div>
+
         <div id="main">
             <img src="img/1.png" alt="">
             <div id="blend"></div>
         </div>
+
         <div class="contain_object">
             <img src="img/1-1.png" id="objimg1-1">
             <img src="img/2-2.png" id="objimg2-2">
@@ -212,6 +216,7 @@
             <img src="img/8-1.png" id="objimg8-1">
             <img src="img/8-2.png" id="objimg8-2">
         </div>
+
         <div id="playButton" onclick="runProcess()">
             <div class="button">
                 <div class="voezStyle"></div>
@@ -223,11 +228,32 @@
             <div class="button">
                 <i class="fa fa-pause fa-4x buttonIcon" id="iconInPauseButton"></i>
             </div>
-
         </div>
+
+        <div class="controlButton" id="eject">
+            <div class="button">
+                <div class="voezStyle"></div>
+            </div>
+
+            <div class="button">
+                <i class="fa fa-eject  fa-2x headerIcon" id="ejectButton" onclick="stop()"></i>
+            </div>
+        </div>
+
+        <div class="controlButton" id="next">
+            <div class="button">
+                <div class="voezStyle"></div>
+            </div>
+
+            <div class="button">
+                <i class="fa fa-step-forward  fa-2x headerIcon" id="nextButton" onclick="playNext()"></i>
+            </div>
+        </div>
+
         <div id="playBar" onclick="changeProgress(event)">
             <div id="progress"></div>
         </div>
+
     </div>
     <footer></footer>
 </body>

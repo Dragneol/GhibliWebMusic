@@ -459,7 +459,7 @@ header img {
     position: absolute;
     width: 500px;
     height: 20px;
-    right: 200px;
+    right: 250px;
     bottom: 102px;
     /* transform: translate(-100%, -50%); */
     border-radius: 10px;
@@ -567,4 +567,35 @@ header img {
     background-color: #000;
     opacity: 0;
     transition: opacity 1s ease;
+}
+
+.controlButton {
+    position: absolute;
+    right: 150px;
+    bottom: 150px;
+}
+
+.controlButton div {
+    width: 50px;
+    height: 50px;
+}
+
+#eject {
+    right: 213px;
+    bottom: 167px;
+}
+
+#ejectButton {
+    position: absolute;
+    left: -3px;
+}
+
+#next {
+    right: 213px;
+    bottom: 95px;
+}
+
+#nextButton {
+    position: absolute;
+    top: 3px;
 }
