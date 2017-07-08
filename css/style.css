@@ -35,7 +35,7 @@ header img {
 
 #artist {
     position: absolute;
-    font-family: Courgette;
+    font-family: Courgette, sans-serif;
     font-size: 10em;
     z-index: 5 !important;
     top: 12%;
@@ -101,6 +101,10 @@ header img {
     transform: translate(-30%, -12%) rotate(45deg);
     box-shadow: #333 0px 0px 20px;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.button {
+    cursor: pointer;
 }
 
 .tileDiv {
@@ -224,7 +228,7 @@ header img {
     overflow: hidden;
 }
 
-#info {
+.seperation {
     position: relative;
     width: 100%;
     height: 10%;
@@ -242,6 +246,7 @@ header img {
 #musicPlayer {
     position: absolute;
     display: none;
+
 }
 
 #main>img {
@@ -416,7 +421,6 @@ header img {
 #b1 {
     left: 0px;
     bottom: 0px;
-    /* background-color: rgba(50, 50, 250, 0.5); */
 }
 
 #b2 {
@@ -434,7 +438,40 @@ header img {
 #b4 {
     left: 330px;
     bottom: 110px;
-    /* background-color: rgba(250, 100, 0, 0.5); */
+}
+
+#b5 {
+    right: 0px;
+    bottom: 0px;
+    border: 10px solid rgba(50, 100, 255, 0.5) !important;
+}
+
+#b6 {
+    right: -110px;
+    bottom: 110px;
+    border: 10px solid rgba(255, 100, 50, 0.5) !important;
+}
+
+#b7 {
+    right: 110px;
+    bottom: 110px;
+    border: 10px solid rgba(255, 100, 50, 0.5) !important;
+}
+
+#b8 {
+    right: 0px;
+    bottom: 220px;
+    border: 10px solid rgba(50, 100, 255, 0.5) !important;
+}
+
+#b9 {
+    right: 220px;
+    bottom: 0px;
+}
+
+#b10 {
+    right: -110px;
+    bottom: 330px;
 }
 
 #playButton {
@@ -598,4 +635,286 @@ header img {
 #nextButton {
     position: absolute;
     top: 3px;
+}
+
+#subcribeScreen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*background-image: url("../img/musicsheet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+}
+
+.right {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+}
+
+#form {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#disk {
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    background-image: url("../img/JoeHisaishi.jpg");
+    background-size: contain;
+    border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f8f8f8;
+    border: 3px solid silver;
+    animation: rollDisk 15s infinite;
+}
+
+@keyframes rollDisk {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(225deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+#detailTile {
+    position: absolute;
+    width: 60%;
+    height: 100px;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3em;
+    font-family: Courgette;
+}
+
+#detailContent {
+    position: absolute;
+    width: 60%;
+    height: 100px;
+    left: 50%;
+    bottom: -13%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2em;
+    font-family: Courgette;
+}
+
+#diskLocation {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #f8f8f8;
+    border: 7px solid silver;
+}
+
+.label {
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.label p {
+    margin: 0px;
+    font-size: 1.5em;
+}
+
+.input {
+    width: 100%;
+}
+
+.input>input {
+    width: 100%;
+    height: 1.7em;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
+}
+
+input p {
+    text-align: left;
+    margin: 0px;
+    display: inline;
+}
+
+.groupInput {
+    width: 100%;
+    margin: 5px;
+}
+
+input:hover,
+select:hover,
+select:focus {
+    border: 1px solid rgb(152, 152, 152);
+    background-color: rgb(152, 152, 152);
+    border: none;
+}
+
+input:focus {
+    background-color: rgb(152, 152, 152);
+    color: white;
+}
+
+.font {
+    font-size: 1.5em!important;
+}
+
+.Phone {
+    width: 20%;
+}
+
+#submit {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, 200%);
+}
+
+#submitbackground {
+    background-color: #ff5555;
+}
+
+#submitTile {
+    font-size: 2em;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    left: -15px;
+}
+
+#submitTile:hover {
+    cursor: pointer;
+}
+
+#checkBox {
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: none;
+    transition: opacity 1s;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    height: 35%;
+    position: relative;
+    bottom: 0px;
+    background-color: #445;
+    overflow: hidden;
+}
+
+.Contact {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.iconContact {
+    width: 10%;
+    height: 40%;
+    position: absolute;
+    right: 0px;
+    transform: translate(-50%, 50%);
+    /* border: 1px solid black; */
+}
+
+.iconContact i {
+    color: rgba(235, 235, 228, 0.8);
+}
+
+.infoContact {
+    border-right: 3px solid rgba(235, 235, 228, 1);
+    width: 80%;
+    margin-top: 15px;
+}
+
+.infoContact p {
+    font-size: 1.2em;
+    text-align: right;
+    margin: 5px;
+    color: rgba(235, 235, 228, 0.6);
+}
+
+#followTile {
+    position: absolute;
+    right: 0px;
+    width: 60%;
+    height: 30%;
+    color: rgba(235, 235, 228, 0.6);
+}
+
+#followList {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    top: 30%;
+    text-align: right;
+}
+
+#styleWith {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    bottom: -30%;
+    text-align: left;
+}
+
+.right span {
+    margin-top: 15px;
+    margin-right: 15px;
+    font-family: Courgette;
+    font-size: 3em;
+    text-align: center;
+}
+
+.right i {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+a:visited {
+    color: rgba(235, 235, 228, 0.6);
+}
+
+a:hover {
+    color: rgba(235, 235, 228, 0.6);
 }

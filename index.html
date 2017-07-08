@@ -2,260 +2,452 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <script src="js/function.js"></script>
     <script src="js/data.js"></script>
-    <title>Document</title>
+    <title>Ghibli Song By Joe Hisaishi</title>
 </head>
 
 <body onload="showNextSlide();decorateList();showList()" onmousewheel="clearScrollPage()">
-    <header>
-        <div class="tileDiv" id="tileDiv2">
-            <div class="head">
-                <p id="tile">Song Collection</p>
-            </div>
+<header>
+    <div class="tileDiv" id="tileDiv2">
+        <div class="head">
+            <p id="tile">Song Collection</p>
         </div>
-        <img src="img/header.png" alt="header">
-        <div class="tileDiv" id="tileDiv1">
-            <div class="head">
-                <p id="artist">Joe Hisaishi</p>
-            </div>
+    </div>
+    <img src="img/header.png" alt="header">
+    <div class="tileDiv" id="tileDiv1">
+        <div class="head">
+            <p id="artist">Joe Hisaishi</p>
         </div>
+    </div>
 
 
-        <div id="playDiv" onclick="scrollPage(1)">
-            <div class="head">
-                <p class="tile">Play</p>
-            </div>
-
-            <div class="button">
-                <div class="voezStyle"></div>
-            </div>
-
-            <div class="button">
-                <i class="fa fa-play fa-5x headerIcon"></i>
-            </div>
-
+    <div id="playDiv" onclick="scrollPage(1)">
+        <div class="head">
+            <p class="tile">Play</p>
         </div>
 
-        <div id="saleDiv">
-            <div class="head">
-                <p class="tile">Subcribe</p>
-            </div>
-
-            <div class="button">
-                <div class="voezStyle"></div>
-            </div>
-
-            <div class="button"><i class="fa fa-usd fa-5x headerIcon"></i></div>
-
+        <div class="button">
+            <div class="voezStyle"></div>
         </div>
 
-    </header>
-
-
-    <div id="info"></div>
-
-
-    <div id="playScreen">
-
-        <audio controls id="musicPlayer" ontimeupdate="updateProgress()">
-            <source src="music/song1.mp3" type="audio/mp3"></source>
-        </audio>
-
-        <div id="menuMusic">
-            <div id="musicList" onclick="showList()">
-                <div class="fa fa-4x fa-sort"></div>
-            </div>
-            <div id="decorationButton">
-                <div class="voezStyle" id="b1"></div>
-                <div class="voezStyle" id="b2"></div>
-                <div class="voezStyle" id="b3"></div>
-                <div class="voezStyle" id="b4"></div>
-            </div>
-            <ul id="list">
-                <li id="li1">
-                    <div class="decoration"></div>
-                    <p>Itsumo Nan Do Demo</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li2">
-                    <div class="decoration"></div>
-                    <p>Yuki no Hana</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li3">
-                    <div class="decoration"></div>
-                    <p>Sekai No Yakusoku</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li4">
-                    <div class="decoration"></div>
-                    <p>Kaze Ni Naru</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li5">
-                    <div class="decoration"></div>
-                    <p>Kimi O Nose Te</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li6">
-                    <div class="decoration"></div>
-                    <p>Sayonara no Natsu</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li7">
-                    <div class="decoration"></div>
-                    <p>Inochi no Namae</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-                <li id="li8">
-                    <div class="decoration"></div>
-                    <p>Umi No Mieru Machi</p>
-                    <div class="contain_square">
-                        <div class="square"></div>
-                    </div>
-                    <div class="contain_spin">
-                        <div class="div_spin">
-                            <div class="in_div_spin in1"></div>
-                            <div class="in_div_spin in2"></div>
-                            <div class="in_div_spin in3"></div>
-                            <div class="in_div_spin in4"></div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-
-        <div id="main">
-            <img src="img/1.png" alt="">
-            <div id="blend"></div>
-        </div>
-
-        <div class="contain_object">
-            <img src="img/1-1.png" id="objimg1-1">
-            <img src="img/2-2.png" id="objimg2-2">
-            <img src="img/3-3.png" id="objimg3-3">
-            <img src="img/5-5.png" id="objimg5-5">
-            <img src="img/6-6.png" id="objimg6-6">
-            <img src="img/7-7.png" id="objimg7-7">
-            <img src="img/8-1.png" id="objimg8-1">
-            <img src="img/8-2.png" id="objimg8-2">
-        </div>
-
-        <div id="playButton" onclick="runProcess()">
-            <div class="button">
-                <div class="voezStyle"></div>
-            </div>
-
-            <div class="button">
-                <i class="fa fa-play fa-5x headerIcon" id="iconInPlayButton"></i>
-            </div>
-            <div class="button">
-                <i class="fa fa-pause fa-4x buttonIcon" id="iconInPauseButton"></i>
-            </div>
-        </div>
-
-        <div class="controlButton" id="eject">
-            <div class="button">
-                <div class="voezStyle"></div>
-            </div>
-
-            <div class="button">
-                <i class="fa fa-eject  fa-2x headerIcon" id="ejectButton" onclick="stop()"></i>
-            </div>
-        </div>
-
-        <div class="controlButton" id="next">
-            <div class="button">
-                <div class="voezStyle"></div>
-            </div>
-
-            <div class="button">
-                <i class="fa fa-step-forward  fa-2x headerIcon" id="nextButton" onclick="playNext()"></i>
-            </div>
-        </div>
-
-        <div id="playBar" onclick="changeProgress(event)">
-            <div id="progress"></div>
+        <div class="button">
+            <i class="fa fa-play fa-5x headerIcon"></i>
         </div>
 
     </div>
-    <footer></footer>
+
+    <div id="saleDiv" onclick="scrollPage(2)">
+        <div class="head">
+            <p class="tile">Subcribe</p>
+        </div>
+
+        <div class="button">
+            <div class="voezStyle"></div>
+        </div>
+
+        <div class="button"><i class="fa fa-usd fa-5x headerIcon"></i></div>
+
+    </div>
+
+</header>
+
+
+<div class="seperation"></div>
+
+
+<div id="playScreen">
+
+    <audio controls id="musicPlayer" ontimeupdate="updateProgress()">
+        <source src="music/song1.mp3" type="audio/mp3"></source>
+    </audio>
+
+    <div id="menuMusic">
+        <div id="musicList" onclick="showList()">
+            <div class="fa fa-4x fa-sort"></div>
+        </div>
+        <div id="decorationButton">
+            <div class="voezStyle" id="b1"></div>
+            <div class="voezStyle" id="b2"></div>
+            <div class="voezStyle" id="b3"></div>
+            <div class="voezStyle" id="b4"></div>
+        </div>
+        <ul id="list">
+            <li id="li1">
+                <div class="decoration"></div>
+                <p>Itsumo Nan Do Demo</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li2">
+                <div class="decoration"></div>
+                <p>Yuki no Hana</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li3">
+                <div class="decoration"></div>
+                <p>Sekai No Yakusoku</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li4">
+                <div class="decoration"></div>
+                <p>Kaze Ni Naru</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li5">
+                <div class="decoration"></div>
+                <p>Kimi O Nose Te</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li6">
+                <div class="decoration"></div>
+                <p>Sayonara no Natsu</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li7">
+                <div class="decoration"></div>
+                <p>Inochi no Namae</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+            <li id="li8">
+                <div class="decoration"></div>
+                <p>Umi No Mieru Machi</p>
+                <div class="contain_square">
+                    <div class="square"></div>
+                </div>
+                <div class="contain_spin">
+                    <div class="div_spin">
+                        <div class="in_div_spin in1"></div>
+                        <div class="in_div_spin in2"></div>
+                        <div class="in_div_spin in3"></div>
+                        <div class="in_div_spin in4"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div id="main">
+        <img src="img/1.png" alt="">
+        <div id="blend"></div>
+    </div>
+
+    <div class="contain_object">
+        <img src="img/1-1.png" id="objimg1-1">
+        <img src="img/2-2.png" id="objimg2-2">
+        <img src="img/3-3.png" id="objimg3-3">
+        <img src="img/5-5.png" id="objimg5-5">
+        <img src="img/6-6.png" id="objimg6-6">
+        <img src="img/7-7.png" id="objimg7-7">
+        <img src="img/8-1.png" id="objimg8-1">
+        <img src="img/8-2.png" id="objimg8-2">
+    </div>
+
+    <div id="playButton" onclick="runProcess()">
+        <div class="button">
+            <div class="voezStyle"></div>
+        </div>
+
+        <div class="button">
+            <i class="fa fa-play fa-5x headerIcon" id="iconInPlayButton"></i>
+        </div>
+        <div class="button">
+            <i class="fa fa-pause fa-4x buttonIcon" id="iconInPauseButton"></i>
+        </div>
+    </div>
+
+    <div class="controlButton" id="eject">
+        <div class="button">
+            <div class="voezStyle"></div>
+        </div>
+
+        <div class="button">
+            <i class="fa fa-eject  fa-2x headerIcon" id="ejectButton" onclick="stop()"></i>
+        </div>
+    </div>
+
+    <div class="controlButton" id="next">
+        <div class="button">
+            <div class="voezStyle"></div>
+        </div>
+
+        <div class="button">
+            <i class="fa fa-step-forward  fa-2x headerIcon" id="nextButton" onclick="playNext()"></i>
+        </div>
+    </div>
+
+    <div id="playBar" onclick="changeProgress(event)">
+        <div id="progress"></div>
+    </div>
+
+</div>
+
+<div class="seperation"></div>
+
+<div id="subcribeScreen">
+    <div id="checkBox">
+        <p id="text"></p>
+    </div>
+    <div class="left">
+        <div id="form">
+
+            <form class="" id="myForm" action="#" method="post">
+                <div class="groupInput">
+                    <div class="label">
+                        <p>First Name</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="Name" value="" placeholder="First Name">
+                    </div>
+                </div>
+
+                <div class="groupInput">
+                    <div class="label">
+                        <p>Last Name</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="Name" value="" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="groupInput">
+                    <div class="label">
+                        <p>Email</p>
+                    </div>
+                    <div class="input">
+                        <input type="email" name="Email" value="" placeholder="test@fpt.edu.vn">
+                    </div>
+                </div>
+
+                <div class="groupInput">
+                    <div class="label">
+                        <p>Address</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="Address" value="" placeholder="Address">
+                    </div>
+                </div>
+
+                <div class="groupInput">
+                    <div class="label">
+                        <p>Phone</p>
+                    </div>
+                    <div class="input">
+                        <input type="tel" name="Phone" value="" placeholder="01674484419">
+                        <!-- <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="+84">
+                        <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="167">
+                        <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="448">
+                        <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="4419"> -->
+                    </div>
+                </div>
+
+                <!-- <div class="groupInput">
+                <div class="label">
+                    <p>Choose Your Type Of Disk</p>
+                </div>
+                <div class="input">
+                    <div clas="choose">
+                        <!-- <input type="checkbox" value="7-inch EP">
+                        <div class="fa fa-3x fa-toggle-off" onclick="check(this)">
+                            <span>7-inch EP</span>
+                        </div>
+                        <input type="number" name="quantity" min>
+                    </div>
+                    <div clas="choose">
+                        <div class="fa fa-3x fa-toggle-off" onclick="check(this)">
+                            <span>12-inch LP</span>
+                        </div>
+                    </div>
+                    <div clas="choose">
+                        <div class="fa fa-3x fa-toggle-on" onclick="check(this)">
+                            <span>CD</span>
+                        </div>
+                    </div>
+                    <div clas="choose">
+                        <div class="fa fa-3x fa-toggle-off" onclick="check(this)">
+                            <span>DVD</span>
+                        </div>
+                    </div>
+                    <div clas="choose">
+                        <div class="fa fa-3x fa-toggle-off" onclick="check(this)">
+                            <span>Bluray</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+                <div class="groupInput">
+                    <div class="label">
+                        <p>Quantity</p>
+                    </div>
+                    <div class="input">
+                        <input type="number" id="Quantity" value="1" placeholder="Quantity" min="1" max="10"
+                               onchange="calculate()">
+                    </div>
+                </div>
+
+                <div class="groupInput">
+                    <div class="label">
+                        <p>Total Cost</p>
+                    </div>
+                    <div class="input">
+                        <input type="text" disabled id="Total Cost" value="$19.99">
+                    </div>
+                </div>
+
+                <div id="submit" onclick="return submitIt()">
+                    <div class="button">
+                        <div class="voezStyle" id="submitbackground"></div>
+                    </div>
+                    <div class="button">
+                        <span id="submitTile">Done</span>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="right">
+        <div id="decorationButton">
+            <div class="voezStyle" id="b5"></div>
+            <div class="voezStyle" id="b6"></div>
+            <div class="voezStyle" id="b7"></div>
+            <div class="voezStyle" id="b8"></div>
+            <div class="voezStyle" id="b9"></div>
+            <div class="voezStyle" id="b10"></div>
+        </div>
+        <div id="disk">
+            <p id="detailTile">Bluray DVD</p>
+            <div id="diskLocation"></div>
+            <p id="detailContent">100-hits Ghibli Song Collection</p>
+        </div>
+
+    </div>
+
+
+</div>
+
+<footer class="seperation">
+    <!--<div class="left">-->
+    <div class="Contact">
+        <div class="iconContact">
+            <i class="fa fa-2x fa-phone"></i>
+        </div>
+        <div class="infoContact">
+            <p>Phone</p>
+            <p>0167-448-4419</p>
+        </div>
+    </div>
+    <div class="Contact">
+        <div class="iconContact">
+            <i class="fa fa-2x fa-map-marker"></i>
+        </div>
+        <div class="infoContact">
+            <p>Address</p>
+            <p>Dict 12 Ho Chi Minh City</p>
+        </div>
+    </div>
+    <div class="Contact">
+        <div class="iconContact">
+            <i class="fa fa-2x fa-envelope"></i>
+        </div>
+        <div class="infoContact">
+            <p>Email</p>
+            <p>duongpthse62871@fpt.edu</p>
+        </div>
+    </div>
+    <!--</div>-->
+    <!--<div class="right">-->
+    <!--<div id="followTile">-->
+    <!--<span>Socialize with Social</span>-->
+    <!--</div>-->
+    <!--<div id="followList">-->
+    <!--<a href="https://www.facebook.com/hoangduong.dh"><i class="fa fa-5x fa-facebook-official"></i></a>-->
+    <!--<a href="https://github.com/Dragneol"><i class="fa fa-5x fa-github"></i></a>-->
+    <!--<a href="https://stackoverflow.com/"><i class="fa fa-5x fa-stack-overflow"></i></a>-->
+    <!--</div>-->
+    <!--<div id="styleWith">-->
+    <!--<span>Create With</span>-->
+    <!--<i class="fa fa-5x fa-css3"></i>-->
+    <!--<i class="fa fa-5x fa-html5"></i>-->
+    <!--</div>-->
+    </div>
+</footer>
 </body>
 
 </html>

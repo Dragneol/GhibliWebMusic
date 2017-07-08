@@ -1,8 +1,8 @@
-const height = window.height;
-const width = window.width;
-var isShowing = false;
+const height = screen.height;
+const width = screen.width;
+var isShowing = false; //menu Song List
 var check;
-var state = 2;
+var state = 2; //paralax silde show header
 var increase = 1;
 var changing;
 var idPlayer = 0;
@@ -10,6 +10,7 @@ var spin;
 var line;
 var square;
 var playStatus = false;
+var error1,error2;
 
 function scrollPage(numPage) {
     check = setInterval(scroll, 11, numPage);
@@ -113,7 +114,7 @@ function decorateList() {
     line = document.getElementsByClassName("decoration");
     square = document.getElementsByClassName("square");
 
-    for (var i = 1; i < 9; i++) {
+    for (var i = 1; i <= songList.length; i++) {
         var stt = i;
         var div_li = document.getElementById("li" + stt);
 
@@ -151,7 +152,13 @@ function play(id) {
 
 function playNext() {
     unChoose();
-    idPlayer++;
+
+    if (idPlayer < songList.length - 1) idPlayer++;
+    else {
+        idPlayer = 0;
+        stop();
+    }
+    // alert(idPlayer);
     choose();
     playASong();
 }
@@ -257,4 +264,104 @@ function chooseEffect(idPlay, isShow) {
             showObject("objimg8-2", 0, 0, 10, 5, isShow, true);
             break;
     }
+}
+
+function toggle(x) {
+    if (x.classList.contains("fa-toggle-on")) {
+        // Remove a class:
+        x.classList.toggle("fa-toggle-on", false);
+        // Add a class:
+        x.classList.toggle("fa-toggle-off", true);
+    } else {
+        x.classList.toggle("fa-toggle-on", true);
+        x.classList.toggle("fa-toggle-off", false);
+    }
+}
+
+function checkNum(x) {
+    // if (event.keyCode >= 48 && event.keyCode <= 57)
+    //     alert("NaN");
+    return !(x.value < 1 || x.value > 10);
+
+}
+
+function calculate() {
+    var sum = document.getElementById("Total Cost");
+    var value = document.getElementById("Quantity");
+    sum.value = "$" + value.value * 19.99;
+}
+
+function submitIt() {
+
+    var checkBox = document.getElementById("checkBox");
+    var errorText = document.getElementById("text");
+    errorText.innerHTML = "";
+    // if (error1 != null) {
+        clearTimeout(error1);
+        clearTimeout(error2);
+        // checkBox.style.opacity = "0";
+    // }
+    // var regex_name = /(?=.*[a-z])(?=.*[A-Z]).{2,}/;
+    var regex_name = /^([a-zA-Z\s])+$/;
+    var name = document.getElementsByName("Name");
+
+    if (!regex_name.test(name[0].value)) {
+        name[0].focus();
+        errorText.innerText = "First Name invalid";
+        checkBox.style.opacity = "1";
+        checkBox.style.display = "inherit";
+        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
+        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        return false;
+    }
+
+    if (!regex_name.test(name[1].value)) {
+        name[1].focus();
+        errorText.innerText = "Last Name invalid";
+        checkBox.style.opacity = "1";
+        checkBox.style.display = "inherit";
+        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
+        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        return false;
+    }
+
+    var regex_email = /^[a-zA-Z0-9]+[@][a-zA-Z]+[.][a-zA-Z]+([.][a-zA-Z]+)?$/;
+    var mail = document.getElementsByName("Email");
+
+    if (!regex_email.test(mail[0].value)) {
+        mail[0].focus();
+        errorText.innerText = "Email invalid";
+        checkBox.style.opacity = "1";
+        checkBox.style.display = "inherit";
+        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
+        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        return false;
+    }
+
+    var regex_phone = /^\d{8,12}$/;
+    var phone = document.getElementsByName("Phone");
+
+    if (!regex_phone.test(phone[0].value)) {
+        phone[0].focus();
+        errorText.innerText = "Phone invalid";
+        checkBox.style.opacity = "1";
+        checkBox.style.display = "inherit";
+        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
+        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        return false;
+    }
+
+    var value = document.getElementById("Quantity");
+    if (!checkNum(value)) {
+        value.focus();
+        errorText.innerText = "Quantity invalid(1~10 only)";
+        checkBox.style.opacity = "1";
+        checkBox.style.display = "inherit";
+        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
+        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        return false;
+    }
+    document.getElementById("myForm").submit();
+    alert("Subcribe Successfully, Refreshing...");
+    return true;
 }
