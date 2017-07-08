@@ -28,15 +28,16 @@ header {
 
 header img {
     position: absolute;
-    right: -15%;
+    right: 0%;
     height: 100%;
+    transform: translate(50%,0%);
     z-index: 0;
 }
 
 #artist {
     position: absolute;
     font-family: Courgette, sans-serif;
-    font-size: 10em;
+    font-size: 7em;
     z-index: 5 !important;
     top: 12%;
     color: #3355ff;
@@ -46,8 +47,8 @@ header img {
     position: absolute;
     font-family: Verdana, sans-serif;
     font-size: 2.5em;
-    letter-spacing: 29px;
-    top: 52.5%;
+    letter-spacing: 2px;
+    top: 70%;
     color: #444443;
     text-transform: uppercase;
 }
@@ -77,10 +78,10 @@ header img {
 .tile {
     position: absolute;
     font-family: Courgette;
-    font-size: 10em;
+    font-size: 7em;
     z-index: 5 !important;
     top: 12%;
-    left: 26%;
+    left: 50%;
     color: white;
     text-shadow: #333 0px 0px 20px;
     transform: translateX(-50%);
@@ -154,6 +155,7 @@ header img {
     transform: translate(50%, -50%) rotate(90deg);
     background-color: #f55;
     z-index: 6;
+    display: none;
 }
 
 #musicList div {
@@ -162,6 +164,7 @@ header img {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+
 }
 
 #list {
@@ -169,7 +172,7 @@ header img {
     padding: 0% 5%;
 }
 
-#list>li {
+#list > li {
     cursor: pointer;
     text-align: left;
     position: relative;
@@ -194,7 +197,6 @@ header img {
     /*transition: height 0.5s ease, background 0.5s ease, line-height 0.5s ease;*/
 }
 
-
 /*#list>li:hover {
     width: 100%;
     border-left: 0px solid #333;
@@ -203,7 +205,7 @@ header img {
     background: linear-gradient(to right, rgba(255, 165, 75, 0.8), rgba(0, 0, 0, 0));
 }*/
 
-#list>li>p {
+#list > li > p {
     position: absolute;
     width: 200px;
     padding-left: 12px;
@@ -226,30 +228,31 @@ header img {
     background-color: #68F;
     transform: translateY(-50%);
     overflow: hidden;
+    display: none;
 }
 
 .seperation {
     position: relative;
     width: 100%;
-    height: 10%;
+    height: 15%;
     background-color: #445;
 }
 
 #playScreen {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 110%;
     overflow: hidden;
     background-color: #ffffff;
+    /*top:10%;*/
 }
 
 #musicPlayer {
     position: absolute;
     display: none;
-
 }
 
-#main>img {
+#main > img {
     position: absolute;
     height: 60%;
     left: 50%;
@@ -478,9 +481,8 @@ header img {
     overflow: visible;
     position: absolute;
     right: 150px;
-    bottom: 150px;
+    top: 200px;
 }
-
 
 /* #playButton div {
     width: 150px;
@@ -494,17 +496,17 @@ header img {
 
 #playBar {
     position: absolute;
-    width: 500px;
+    width: 300px;
     height: 20px;
-    right: 250px;
-    bottom: 102px;
+    right: 100px;
+    bottom: 300px;
     /* transform: translate(-100%, -50%); */
     border-radius: 10px;
-    border: 5px solid rgba(255, 255, 255, 0.8);
+    border: 5px solid rgba(235, 235, 228, 0.8);
     background-color: rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
-    display: block;
     overflow: hidden;
+    display: none;
 }
 
 @keyframes playingSong {
@@ -522,8 +524,7 @@ header img {
     height: 10px;
     width: 0%;
     max-width: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    ;
+    background-color: rgba(255, 255, 255, 1);;
     border-radius: 10px;
     /* animation: loadingStripes 700ms linear infinite; */
 }
@@ -542,6 +543,7 @@ header img {
     height: 100%;
     top: 0px;
     left: 0px;
+    opacity: 0.5;
 }
 
 .contain_object img {
@@ -618,8 +620,8 @@ header img {
 }
 
 #eject {
-    right: 213px;
-    bottom: 167px;
+    right: 140px;
+    top: 100px;
 }
 
 #ejectButton {
@@ -628,8 +630,8 @@ header img {
 }
 
 #next {
-    right: 213px;
-    bottom: 95px;
+    right: 140px;
+    top: -140px;
 }
 
 #nextButton {
@@ -750,10 +752,10 @@ header img {
     width: 100%;
 }
 
-.input>input {
+.input > input {
     width: 100%;
-    height: 1.7em;
-    font-size: 1.2em;
+    height: 1.5em;
+    font-size: 1em;
     border-radius: 0px;
     padding-left: 10px;
     border: 1px solid black;
@@ -768,7 +770,7 @@ input p {
 .groupInput {
     width: 100%;
     margin: 5px;
-}   
+}
 
 input:hover,
 select:hover,
@@ -784,7 +786,7 @@ input:focus {
 }
 
 .font {
-    font-size: 1.5em!important;
+    font-size: 1.5em !important;
 }
 
 .Phone {
@@ -841,8 +843,8 @@ footer {
 }
 
 .Contact {
-    width: 30%;
-    height: 100%;
+    width: 100%;
+    height: 33%;
     position: relative;
     float: left;
 }
@@ -867,9 +869,9 @@ footer {
 }
 
 .infoContact p {
-    font-size: 1.2em;
+    font-size: 0.5em;
     text-align: right;
-    margin: 5px;
+    margin: 3px;
     color: rgba(235, 235, 228, 0.6);
 }
 

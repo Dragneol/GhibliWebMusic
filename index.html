@@ -2,9 +2,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (min-width: 0px) and (max-width:1025px)">
+    <link rel="stylesheet" href="css/style.css" media="screen and (min-width: 1025px)">
     <link rel="stylesheet" href="css/font-awesome.css">
     <script src="js/function.js"></script>
     <script src="js/data.js"></script>
@@ -63,6 +64,7 @@
 <div id="playScreen">
 
     <audio controls id="musicPlayer" ontimeupdate="updateProgress()">
+        <source src="music/song1.mp3" type="audio/m4a"></source>
         <source src="music/song1.mp3" type="audio/mp3"></source>
     </audio>
 
@@ -262,6 +264,22 @@
     <div id="checkBox">
         <p id="text"></p>
     </div>
+    <div class="right">
+        <div id="decorationButton">
+            <div class="voezStyle" id="b5"></div>
+            <div class="voezStyle" id="b6"></div>
+            <div class="voezStyle" id="b7"></div>
+            <div class="voezStyle" id="b8"></div>
+            <div class="voezStyle" id="b9"></div>
+            <div class="voezStyle" id="b10"></div>
+        </div>
+        <div id="disk">
+            <p id="detailTile">Bluray DVD</p>
+            <div id="diskLocation"></div>
+            <p id="detailContent">100-hits Ghibli Song Collection</p>
+        </div>
+
+    </div>
     <div class="left">
         <div id="form">
 
@@ -381,22 +399,6 @@
             </form>
 
         </div>
-    </div>
-    <div class="right">
-        <div id="decorationButton">
-            <div class="voezStyle" id="b5"></div>
-            <div class="voezStyle" id="b6"></div>
-            <div class="voezStyle" id="b7"></div>
-            <div class="voezStyle" id="b8"></div>
-            <div class="voezStyle" id="b9"></div>
-            <div class="voezStyle" id="b10"></div>
-        </div>
-        <div id="disk">
-            <p id="detailTile">Bluray DVD</p>
-            <div id="diskLocation"></div>
-            <p id="detailContent">100-hits Ghibli Song Collection</p>
-        </div>
-
     </div>
 
 
