@@ -781,7 +781,7 @@ header img {
     font-size: 1.2em;
     border-radius: 0px;
     padding-left: 10px;
-    border: 1px solid black;
+    border: 1px solid rgba(50, 100, 255, 0.5);
 }
 
 input p {
@@ -798,13 +798,13 @@ input p {
 input:hover,
 select:hover,
 select:focus {
-    border: 1px solid rgb(152, 152, 152);
-    background-color: rgb(152, 152, 152);
-    border: none;
+    border-left: 10px solid rgba(50, 100, 255, 0.5);
+    /*background-color: #ff5555;*/
+
 }
 
 input:focus {
-    background-color: rgb(152, 152, 152);
+    background-color: rgba(50, 100, 255, 0.5);
     color: white;
 }
 
@@ -942,4 +942,11 @@ a:visited {
 
 a:hover {
     color: rgba(235, 235, 228, 0.6);
+}
+
+#lyric {
+    width: 70%;
+    height: 30%;
+    position: relative;
+    transform: translate(50%, 222%);
 }

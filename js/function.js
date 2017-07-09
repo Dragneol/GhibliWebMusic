@@ -10,7 +10,7 @@ var spin;
 var line;
 var square;
 var playStatus = false;
-var error1,error2;
+var error1, error2;
 
 function scrollPage(numPage) {
     check = setInterval(scroll, 11, numPage);
@@ -93,17 +93,17 @@ function showList() {
     }
 }
 /*
-function turnOffAnimation() {
+ function turnOffAnimation() {
 
-    var spin = document.getElementById("list").querySelectorAll(".div_spin");
-    for (var i = 0; i < spin.length; i++)
-        spin[i].style.animation = "";
+ var spin = document.getElementById("list").querySelectorAll(".div_spin");
+ for (var i = 0; i < spin.length; i++)
+ spin[i].style.animation = "";
 
-    var wings = document.getElementById("list").querySelectorAll(".in_div_spin");
-    for (var i = 0; i < wings.length; i++)
-        wings[i].style.animation = "";
-}
-*/
+ var wings = document.getElementById("list").querySelectorAll(".in_div_spin");
+ for (var i = 0; i < wings.length; i++)
+ wings[i].style.animation = "";
+ }
+ */
 function decorateList() {
 
     // turnOffAnimation();
@@ -141,7 +141,7 @@ function playASong() {
 }
 
 function play(id) {
-    return function() {
+    return function () {
         unChoose();
         idPlayer = id - 1;
         choose();
@@ -152,6 +152,7 @@ function play(id) {
 
 function playNext() {
     unChoose();
+
     if (idPlayer < songList.length - 1) idPlayer++;
     else {
         idPlayer = 0;
@@ -239,30 +240,57 @@ function showObject(tagId, startX, startY, endX, endY, isShow, isBlend) {
 }
 
 function chooseEffect(idPlay, isShow) {
+    if (screen.width > 770) {
+        switch (idPlay) {
+            case 1:
+                showObject("objimg1-1", 0, 0, 50, 0, isShow, true);
+                break;
+            case 2:
+                showObject("objimg2-2", 0, 0, 30, 0, isShow, true);
+                break;
+            case 3:
+                showObject("objimg3-3", 30, 0, 60, 0, isShow, false);
+                break;
+            case 5:
+                showObject("objimg5-5", 0, -10, 0, 30, isShow, false);
+                break;
+            case 6:
+                showObject("objimg6-6", 0, 0, -15, -40, isShow, false);
+                break;
+            case 7:
+                showObject("objimg7-7", 0, 0, -50, 0, isShow, false);
+                break;
+            case 8:
+                showObject("objimg8-1", 0, 0, 10, 10, isShow, true);
+                showObject("objimg8-2", 0, 0, 10, 5, isShow, true);
+                break;
+        }
+    } else {
+        switch (idPlay) {
+            case 1:
+                showObject("objimg1-1", 0, 0, 10, 0, isShow, true);
+                break;
+            case 2:
+                showObject("objimg2-2", 0, 0, 10, 0, isShow, true);
+                break;
+            case 3:
+                showObject("objimg3-3", 0, 0, 10, 0, isShow, false);
+                break;
+            case 5:
+                showObject("objimg5-5", 0, 0, 10, 0, isShow, false);
+                break;
+            case 6:
+                showObject("objimg6-6", 0, 0, 10, 0, isShow, false);
+                break;
+            case 7:
+                showObject("objimg7-7", 0, 0, 10, 0, isShow, false);
+                break;
+            case 8:
+                showObject("objimg8-1", 0, 0, 30, 0, isShow, true);
+                showObject("objimg8-2", 0, 0, 30, 0, isShow, true);
+                break;
+        }
 
-    switch (idPlay) {
-        case 1:
-            showObject("objimg1-1", 0, 0, 50, 0, isShow, true);
-            break;
-        case 2:
-            showObject("objimg2-2", 0, 0, 30, 0, isShow, true);
-            break;
-        case 3:
-            showObject("objimg3-3", 30, 0, 60, 0, isShow, false);
-            break;
-        case 5:
-            showObject("objimg5-5", 0, -10, 0, 30, isShow, false);
-            break;
-        case 6:
-            showObject("objimg6-6", 0, 0, -15, -40, isShow, false);
-            break;
-        case 7:
-            showObject("objimg7-7", 0, 0, -50, 0, isShow, false);
-            break;
-        case 8:
-            showObject("objimg8-1", 0, 0, 10, 10, isShow, true);
-            showObject("objimg8-2", 0, 0, 10, 5, isShow, true);
-            break;
     }
 }
 
@@ -297,9 +325,9 @@ function submitIt() {
     var errorText = document.getElementById("text");
     errorText.innerHTML = "";
     // if (error1 != null) {
-        clearTimeout(error1);
-        clearTimeout(error2);
-        // checkBox.style.opacity = "0";
+    clearTimeout(error1);
+    clearTimeout(error2);
+    // checkBox.style.opacity = "0";
     // }
     // var regex_name = /(?=.*[a-z])(?=.*[A-Z]).{2,}/;
     var regex_name = /^([a-zA-Z\s])+$/;
@@ -310,8 +338,12 @@ function submitIt() {
         errorText.innerText = "First Name invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
-        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        error1 = setTimeout(function () {
+            checkBox.style.opacity = "0";
+        }, 3000);
+        error2 = setTimeout(function () {
+            checkBox.style.display = "none";
+        }, 4000);
         return false;
     }
 
@@ -320,8 +352,12 @@ function submitIt() {
         errorText.innerText = "Last Name invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
-        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        error1 = setTimeout(function () {
+            checkBox.style.opacity = "0";
+        }, 3000);
+        error2 = setTimeout(function () {
+            checkBox.style.display = "none";
+        }, 4000);
         return false;
     }
 
@@ -333,8 +369,12 @@ function submitIt() {
         errorText.innerText = "Email invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
-        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        error1 = setTimeout(function () {
+            checkBox.style.opacity = "0";
+        }, 3000);
+        error2 = setTimeout(function () {
+            checkBox.style.display = "none";
+        }, 4000);
         return false;
     }
 
@@ -346,8 +386,12 @@ function submitIt() {
         errorText.innerText = "Phone invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
-        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        error1 = setTimeout(function () {
+            checkBox.style.opacity = "0";
+        }, 3000);
+        error2 = setTimeout(function () {
+            checkBox.style.display = "none";
+        }, 4000);
         return false;
     }
 
@@ -357,8 +401,12 @@ function submitIt() {
         errorText.innerText = "Quantity invalid(1~10 only)";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function() { checkBox.style.opacity = "0";}, 3000);
-        error2 = setTimeout(function() {checkBox.style.display = "none";}, 4000);
+        error1 = setTimeout(function () {
+            checkBox.style.opacity = "0";
+        }, 3000);
+        error2 = setTimeout(function () {
+            checkBox.style.display = "none";
+        }, 4000);
         return false;
     }
     document.getElementById("myForm").submit();

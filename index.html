@@ -259,6 +259,7 @@
         <div id="progress"></div>
     </div>
 
+    <div id="lyric"></div>
 </div>
 
 <div class="seperation"></div>
@@ -289,46 +290,46 @@
             <form class="" id="myForm" action="#" method="post">
                 <div class="groupInput">
                     <div class="label">
-                        <p>First Name</p>
+                        <p>First Name(*)</p>
                     </div>
                     <div class="input">
-                        <input type="text" name="Name" value="" placeholder="First Name">
+                        <input type="text" name="Name" required placeholder="First Name">
                     </div>
                 </div>
 
                 <div class="groupInput">
                     <div class="label">
-                        <p>Last Name</p>
+                        <p>Last Name(*)</p>
                     </div>
                     <div class="input">
-                        <input type="text" name="Name" value="" placeholder="Last Name">
+                        <input type="text" name="Name" required placeholder="Last Name">
                     </div>
                 </div>
 
                 <div class="groupInput">
                     <div class="label">
-                        <p>Email</p>
+                        <p>Email(*)</p>
                     </div>
                     <div class="input">
-                        <input type="email" name="Email" value="" placeholder="test@fpt.edu.vn">
+                        <input type="email" name="Email" required placeholder="test@fpt.edu.vn">
                     </div>
                 </div>
 
                 <div class="groupInput">
                     <div class="label">
-                        <p>Address</p>
+                        <p>Address(*)</p>
                     </div>
                     <div class="input">
-                        <input type="text" name="Address" value="" placeholder="Address">
+                        <input type="text" name="Address" required placeholder="Address">
                     </div>
                 </div>
 
                 <div class="groupInput">
                     <div class="label">
-                        <p>Phone</p>
+                        <p>Phone(*)</p>
                     </div>
                     <div class="input">
-                        <input type="tel" name="Phone" value="" placeholder="01674484419">
+                        <input type="tel" name="Phone" required placeholder="01674484419">
                         <!-- <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="+84">
                         <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="167">
                         <input type="text" name="Phone" class="Phone" maxlength="3" placeholder="448">
@@ -373,14 +374,13 @@
 
                 <div class="groupInput">
                     <div class="label">
-                        <p>Quantity</p>
+                        <p>Quantity(*)</p>
                     </div>
                     <div class="input">
-                        <input type="number" id="Quantity" value="1" placeholder="Quantity" min="1" max="10"
-                               onchange="calculate()">
+                        <input type="number" id="Quantity" value="1" placeholder="Quantity" min="1" max="10" required onchange="calculate()">
                     </div>
                 </div>
-
+                <label>(*) are Required</label>
                 <div class="groupInput">
                     <div class="label">
                         <p>Total Cost</p>
