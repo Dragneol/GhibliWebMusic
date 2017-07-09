@@ -33,6 +33,31 @@ header img {
     z-index: 0;
 }
 
+.imgHeader {
+    position: absolute;
+    transform: translateX(15%);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background-image: url("../img/header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.rold {
+    position: absolute;
+    top:65%;
+    height: 50%;
+    width: 100%;
+    z-index: 0;
+    background-image: url("../img/header1.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
 #artist {
     position: absolute;
     font-family: Courgette, sans-serif;
@@ -768,7 +793,7 @@ input p {
 .groupInput {
     width: 100%;
     margin: 5px;
-}   
+}
 
 input:hover,
 select:hover,

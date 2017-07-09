@@ -152,7 +152,6 @@ function play(id) {
 
 function playNext() {
     unChoose();
-
     if (idPlayer < songList.length - 1) idPlayer++;
     else {
         idPlayer = 0;
@@ -240,6 +239,7 @@ function showObject(tagId, startX, startY, endX, endY, isShow, isBlend) {
 }
 
 function chooseEffect(idPlay, isShow) {
+
     switch (idPlay) {
         case 1:
             showObject("objimg1-1", 0, 0, 50, 0, isShow, true);
