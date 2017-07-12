@@ -4,7 +4,7 @@ var isShowing = false; //menu Song List
 var check;
 var state = 2; //paralax silde show header
 var increase = 1;
-var changing;
+var stt = 0;
 var idPlayer = 0;
 var spin;
 var line;
@@ -129,6 +129,7 @@ function decorateList() {
 
 function playASong() {
     playStatus = true;
+    stt = 0;
     var buttonPlay = document.getElementById("iconInPlayButton");
     var buttonPause = document.getElementById("iconInPauseButton");
     buttonPlay.style.visibility = "hidden";
@@ -141,7 +142,7 @@ function playASong() {
 }
 
 function play(id) {
-    return function () {
+    return function() {
         unChoose();
         idPlayer = id - 1;
         choose();
@@ -212,6 +213,20 @@ function runProcess() {
 function updateProgress() {
     var audio = document.getElementById("musicPlayer");
     document.getElementById("progress").style.width = (audio.currentTime / audio.duration * 100) + "%";
+    var lyric = document.getElementById("lyric");
+    var show = document.getElementById("lyricBar");
+
+    if (songList[idPlayer].lyric[stt].ended <= audio.currentTime) {
+        setTimeout(function() {
+            show.style.webkitAnimation = "";
+        }, (songList[idPlayer].lyric[stt].ended - songList[idPlayer].lyric[stt].started) * 1000 - 10);
+        stt++;
+        show.style.webkitAnimation = "lyricFlow " + (songList[idPlayer].lyric[stt].ended - songList[idPlayer].lyric[stt].started) + "s";
+    }
+    if (songList[idPlayer].lyric[stt].ended >= audio.currentTime && songList[idPlayer].lyric[stt].started <= audio.currentTime)
+        lyric.innerText = songList[idPlayer].lyric[stt].word;
+    else lyric.innerText = "";
+    console.log(audio.currentTime);
     if (audio.currentTime == audio.duration) playNext();
 }
 
@@ -219,6 +234,28 @@ function changeProgress(event) {
     var playBar = document.getElementById("playBar");
     var x = event.clientX - playBar.offsetLeft;
     var audio = document.getElementById("musicPlayer");
+
+    var check = true;
+    for (var i = 0; check; i++)
+        if (songList[idPlayer].lyric[i].ended >= audio.currentTime) {
+            stt = i;
+            check = false;
+        }
+
+
+        // var l = 0,
+        //     r = songList[idPlayer].lyric.length - 1,
+        //     i = Math.round((r - l) / 2);
+        // while (l < r) {
+        //     i = Math.round((r - l) / 2);
+        //     if (songList[idPlayer].lyric[i].ended >= audio.currentTime && songList[idPlayer].lyric[i].started <= audio.currentTime) {
+        //         stt = i;
+        //         l = r;
+        //     } else if (songList[i4dPlayer].lyric[l].ended < audio.currentTime) l = i + 1;
+        //     else r = i - 1;
+        // }
+        // console.log(i);
+
     audio.currentTime = x / playBar.offsetWidth * audio.duration;
 }
 
@@ -240,7 +277,7 @@ function showObject(tagId, startX, startY, endX, endY, isShow, isBlend) {
 }
 
 function chooseEffect(idPlay, isShow) {
-    if (screen.width > 770) {
+    if (innerWidth > 1025) {
         switch (idPlay) {
             case 1:
                 showObject("objimg1-1", 0, 0, 50, 0, isShow, true);
@@ -268,26 +305,26 @@ function chooseEffect(idPlay, isShow) {
     } else {
         switch (idPlay) {
             case 1:
-                showObject("objimg1-1", 0, 0, 10, 0, isShow, true);
+                showObject("objimg1-1", 0, 0, -20, 0, isShow, true);
                 break;
             case 2:
-                showObject("objimg2-2", 0, 0, 10, 0, isShow, true);
+                showObject("objimg2-2", 0, 0, -10, 0, isShow, true);
                 break;
             case 3:
-                showObject("objimg3-3", 0, 0, 10, 0, isShow, false);
+                showObject("objimg3-3", 0, 0, -10, 0, isShow, false);
                 break;
             case 5:
-                showObject("objimg5-5", 0, 0, 10, 0, isShow, false);
+                showObject("objimg5-5", 0, -30, 0, 30, isShow, false);
                 break;
             case 6:
-                showObject("objimg6-6", 0, 0, 10, 0, isShow, false);
+                showObject("objimg6-6", -100, -10, -150, -20, isShow, false);
                 break;
             case 7:
-                showObject("objimg7-7", 0, 0, 10, 0, isShow, false);
+                showObject("objimg7-7", 0, 0, -60, 0, isShow, false);
                 break;
             case 8:
-                showObject("objimg8-1", 0, 0, 30, 0, isShow, true);
-                showObject("objimg8-2", 0, 0, 30, 0, isShow, true);
+                showObject("objimg8-1", 0, 0, -10, 20, isShow, true);
+                showObject("objimg8-2", 0, 0, -50, 20, isShow, true);
                 break;
         }
 
@@ -338,10 +375,10 @@ function submitIt() {
         errorText.innerText = "First Name invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function () {
+        error1 = setTimeout(function() {
             checkBox.style.opacity = "0";
         }, 3000);
-        error2 = setTimeout(function () {
+        error2 = setTimeout(function() {
             checkBox.style.display = "none";
         }, 4000);
         return false;
@@ -352,10 +389,10 @@ function submitIt() {
         errorText.innerText = "Last Name invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function () {
+        error1 = setTimeout(function() {
             checkBox.style.opacity = "0";
         }, 3000);
-        error2 = setTimeout(function () {
+        error2 = setTimeout(function() {
             checkBox.style.display = "none";
         }, 4000);
         return false;
@@ -369,10 +406,10 @@ function submitIt() {
         errorText.innerText = "Email invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function () {
+        error1 = setTimeout(function() {
             checkBox.style.opacity = "0";
         }, 3000);
-        error2 = setTimeout(function () {
+        error2 = setTimeout(function() {
             checkBox.style.display = "none";
         }, 4000);
         return false;
@@ -386,10 +423,10 @@ function submitIt() {
         errorText.innerText = "Phone invalid";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function () {
+        error1 = setTimeout(function() {
             checkBox.style.opacity = "0";
         }, 3000);
-        error2 = setTimeout(function () {
+        error2 = setTimeout(function() {
             checkBox.style.display = "none";
         }, 4000);
         return false;
@@ -401,10 +438,10 @@ function submitIt() {
         errorText.innerText = "Quantity invalid(1~10 only)";
         checkBox.style.opacity = "1";
         checkBox.style.display = "inherit";
-        error1 = setTimeout(function () {
+        error1 = setTimeout(function() {
             checkBox.style.opacity = "0";
         }, 3000);
-        error2 = setTimeout(function () {
+        error2 = setTimeout(function() {
             checkBox.style.display = "none";
         }, 4000);
         return false;

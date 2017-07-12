@@ -47,7 +47,7 @@ header img {
 
 .rold {
     position: absolute;
-    top:65%;
+    top: 65%;
     height: 50%;
     width: 100%;
     z-index: 0;
@@ -271,7 +271,6 @@ header img {
 #musicPlayer {
     position: absolute;
     display: none;
-
 }
 
 #main>img {
@@ -800,7 +799,6 @@ select:hover,
 select:focus {
     border-left: 10px solid rgba(50, 100, 255, 0.5);
     /*background-color: #ff5555;*/
-
 }
 
 input:focus {
@@ -944,9 +942,38 @@ a:hover {
     color: rgba(235, 235, 228, 0.6);
 }
 
+#lyricBar {
+    position: absolute;
+    width: 23em;
+    height: 4em;
+    left: 30%;
+    bottom: 25%;
+    overflow: hidden;
+    /*opacity: 0;*/
+}
+
 #lyric {
-    width: 70%;
-    height: 30%;
-    position: relative;
-    transform: translate(50%, 222%);
+    width: 23em;
+    height: 4em;
+    font-size: 1em;
+    /*color: #87CEEB;*/
+    color: white;
+    font-family: monospace, monospace;
+    position: absolute;
+    text-align: center;
+}
+
+@keyframes lyricFlow {
+    0% {
+        width: 0;
+        /*opacity: 1;*/
+    }
+    50% {
+        width: 10em;
+        /*opacity: 1;*/
+    }
+    100% {
+        width: 23em;
+        /*opacity: 0;*/
+    }
 }

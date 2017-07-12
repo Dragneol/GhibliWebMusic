@@ -597,24 +597,24 @@ header img {
 
 #objimg5-5 {
     height: 90%;
-    transform: translate(70%, 0%) rotateY(180deg);
+    transform: translate(0%, 0%) rotateY(180deg);
     transition: top 5s cubic-bezier(0, 0.5, 0.3, 1), left 5s cubic-bezier(0, 0.5, 0.3, 1), opacity 1s ease;
 }
 
 #objimg6-6 {
     height: 100%;
-    transform: translate(30%, 50%);
+    transform: translate(0%, 50%);
 }
 
 #objimg7-7 {
     height: 100%;
-    transform: translate(100%, 25%);
+    transform: translate(0%, 25%);
     transition: top 5s cubic-bezier(0, 0.5, 0.3, 1), left 5s cubic-bezier(0, 0.5, 0.3, 1), opacity 1s ease;
 }
 
 #objimg8-1 {
     height: 150%;
-    transform: translate(-30%, -20%);
+    transform: translate(-50%, -20%);
 }
 
 #objimg8-2 {
@@ -946,9 +946,17 @@ a:hover {
     color: rgba(235, 235, 228, 0.6);
 }
 
+#lyricBar {
+    position: absolute;
+    width: 20em;
+    height: 2em;
+    left: 15%;
+    bottom: 30%;
+}
+
 #lyric {
-    width: 70%;
-    height: 30%;
-    position: relative;
-    transform: translate(50%, 222%);
+    width: 20em;
+    height: 2em;
+    position: absolute;
+    text-align: center;
 }

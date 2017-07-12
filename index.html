@@ -259,7 +259,10 @@
         <div id="progress"></div>
     </div>
 
-    <div id="lyric"></div>
+    <div id="lyricBar">
+        <div id="lyric"></div>
+        <div id="word"></div>
+    </div>
 </div>
 
 <div class="seperation"></div>
@@ -377,7 +380,8 @@
                         <p>Quantity(*)</p>
                     </div>
                     <div class="input">
-                        <input type="number" id="Quantity" value="1" placeholder="Quantity" min="1" max="10" required onchange="calculate()">
+                        <input type="number" id="Quantity" value="1" placeholder="Quantity" min="1" max="10" required
+                               onchange="calculate()">
                     </div>
                 </div>
                 <label>(*) are Required</label>
