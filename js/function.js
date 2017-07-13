@@ -226,7 +226,6 @@ function updateProgress() {
     if (songList[idPlayer].lyric[stt].ended >= audio.currentTime && songList[idPlayer].lyric[stt].started <= audio.currentTime)
         lyric.innerText = songList[idPlayer].lyric[stt].word;
     else lyric.innerText = "";
-    console.log(audio.currentTime);
     if (audio.currentTime == audio.duration) playNext();
 }
 
@@ -234,7 +233,7 @@ function changeProgress(event) {
     var playBar = document.getElementById("playBar");
     var x = event.clientX - playBar.offsetLeft;
     var audio = document.getElementById("musicPlayer");
-
+    audio.currentTime = x / playBar.offsetWidth * audio.duration;
     var check = true;
     for (var i = 0; check; i++)
         if (songList[idPlayer].lyric[i].ended >= audio.currentTime) {
@@ -251,12 +250,10 @@ function changeProgress(event) {
         //     if (songList[idPlayer].lyric[i].ended >= audio.currentTime && songList[idPlayer].lyric[i].started <= audio.currentTime) {
         //         stt = i;
         //         l = r;
-        //     } else if (songList[i4dPlayer].lyric[l].ended < audio.currentTime) l = i + 1;
+        //     } else if (songList[idPlayer].lyric[l].ended < audio.currentTime) l = i + 1;
         //     else r = i - 1;
         // }
-        // console.log(i);
-
-    audio.currentTime = x / playBar.offsetWidth * audio.duration;
+    console.log(stt);
 }
 
 function showObject(tagId, startX, startY, endX, endY, isShow, isBlend) {
