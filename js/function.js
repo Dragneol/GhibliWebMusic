@@ -253,7 +253,7 @@ function changeProgress(event) {
         //     } else if (songList[idPlayer].lyric[l].ended < audio.currentTime) l = i + 1;
         //     else r = i - 1;
         // }
-    console.log(stt);
+        // console.log(stt);
 }
 
 function showObject(tagId, startX, startY, endX, endY, isShow, isBlend) {
@@ -284,6 +284,9 @@ function chooseEffect(idPlay, isShow) {
                 break;
             case 3:
                 showObject("objimg3-3", 30, 0, 60, 0, isShow, false);
+                break;
+            case 4:
+                showObject("objimg4", 10, 10, 0, 0, isShow, false);
                 break;
             case 5:
                 showObject("objimg5-5", 0, -10, 0, 30, isShow, false);

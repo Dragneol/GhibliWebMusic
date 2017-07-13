@@ -568,7 +568,7 @@ header img {
     left: 0px;
 }
 
-.contain_object img {
+.contain_object>img {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -617,6 +617,148 @@ header img {
 #objimg8-2 {
     height: 130%;
     transform: translate(-10%, -20%);
+}
+
+#objimg4 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+#objimg4 img {
+    position: absolute;
+    animation-timing-function: linear;
+}
+
+#objimg4-main {
+    position: absolute;
+    height: 90%;
+    top: auto;
+    bottom: 0%;
+    left: auto;
+    right: 0%;
+    transform-origin: right bottom;
+}
+
+.flyInWind {
+    animation: dandelionMain 5s infinite ease-in-out;
+}
+
+@keyframes dandelionMain {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+#objimg4-1 {
+    transform: translate(-100%, 0%);
+    animation-name: flyInWind1;
+    animation-duration: 15.5s;
+    animation-delay: 0s;
+}
+
+#objimg4-2 {
+    transform: translate(-50%, 0%);
+    animation-name: flyInWind2;
+    animation-duration: 13s;
+    animation-delay: 1s;
+}
+
+#objimg4-3 {
+    transform: translate(0%, 0%);
+    animation-name: flyInWind3;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+#objimg4-4 {
+    transform: translate(-10%, 0%);
+    animation-name: flyInWind1;
+    animation-duration: 14s;
+    animation-delay: 3s;
+}
+
+#objimg4-5 {
+    transform: translate(0%, -50%);
+    animation-name: flyInWind2;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+#objimg4-6 {
+    transform: translate(0%, -10%);
+    animation-name: flyInWind3;
+    animation-duration: 8.5s;
+    animation-delay: 1s;
+}
+
+#objimg4-7 {
+    transform: translate(0%, -100%);
+    animation-name: flyInWind1;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+#objimg4-8 {
+    transform: translate(0%, -30%);
+    animation-name: flyInWind2;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+@keyframes flyInWind1 {
+    0% {
+        top: 100%;
+        left: 110%;
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        top: -20%;
+        left: 40%;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes flyInWind2 {
+    0% {
+        top: 100%;
+        left: 100%;
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        top: -20%;
+        left: 20%;
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes flyInWind3 {
+    0% {
+        top: 110%;
+        left: 100%;
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        top: -20%;
+        left: 0%;
+        transform: rotate(-10deg);
+    }
 }
 
 #blend {
@@ -945,7 +1087,7 @@ a:hover {
 #lyricBar {
     position: absolute;
     width: 23em;
-    height: 4em;
+    height: 2.5em;
     left: 30%;
     bottom: 25%;
     overflow: hidden;
@@ -954,13 +1096,17 @@ a:hover {
 
 #lyric {
     width: 23em;
-    height: 4em;
+    height: 2em;
     font-size: 1em;
     /*color: #87CEEB;*/
     color: white;
     font-family: monospace, monospace;
     position: absolute;
     text-align: center;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(0%, -50%);
+    line-height: 2em;
 }
 
 @keyframes lyricFlow {
@@ -968,12 +1114,92 @@ a:hover {
         width: 0;
         /*opacity: 1;*/
     }
+    /* 25% {
+        width: 5em;
+    }
     50% {
         width: 10em;
-        /*opacity: 1;*/
     }
+    75% {
+        width: 15em;
+    } */
     100% {
         width: 23em;
         /*opacity: 0;*/
+    }
+}
+
+#wordContain {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translate(50%, -50%);
+    /* opacity: 0; */
+}
+
+#word1 {
+    position: relative;
+    animation: rolling1 3s infinite;
+}
+
+#word2 {
+    position: relative;
+    animation: rolling2 3s infinite;
+}
+
+.voezStyleWord {
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    transform: rotate(45deg);
+    box-shadow: rgba(255, 255, 255, 1) 0px 0px 10px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+@keyframes rolling1 {
+    0% {
+        width: 1.5em;
+        height: 1.5em;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 1px;
+        background-color: rgba(152, 177, 255, 0.8);
+        transform: rotate(45deg);
+    }
+    50% {
+        width: 0.2em;
+        height: 0.2em;
+        box-shadow: rgba(255, 255, 255, 1) 0px 0px 5px;
+        background-color: rgba(255, 255, 255, 1);
+        transform: rotate(225deg);
+    }
+    100% {
+        width: 1.5em;
+        height: 1.5em;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 1px;
+        background-color: rgba(152, 177, 255, 0.8);
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes rolling2 {
+    0% {
+        width: 0.2em;
+        height: 0.2em;
+        box-shadow: rgba(255, 255, 255, 1) 0px 0px 5px;
+        background-color: rgba(255, 255, 255, 1);
+        transform: rotate(0deg);
+    }
+    50% {
+        width: 1.5em;
+        height: 1.5em;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 1px;
+        background-color: rgba(255, 177, 152, 0.8);
+        transform: rotate(180deg);
+    }
+    100% {
+        width: 0.2em;
+        height: 0.2em;
+        box-shadow: rgba(255, 255, 255, 1) 0px 0px 5px;
+        background-color: rgba(255, 255, 255, 1);
+        transform: rotate(360deg);
     }
 }

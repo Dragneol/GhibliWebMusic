@@ -67,7 +67,7 @@ songList[0].lyric.push(new Lyrics(0, 5, ''));
 songList[0].lyric.push(new Lyrics(5, 10.7, 'Yondeiru Mune no Dokoka Okude'));
 songList[0].lyric.push(new Lyrics(11, 16.8, 'Itsumo Kokoro Odoru Yume wo Mitai'));
 songList[0].lyric.push(new Lyrics(17, 22.5, 'Kanashimi wa Kazoekirenai kedo'));
-songList[0].lyric.push(new Lyrics(23, 28.3, 'Sono Mukou de Kitto Anata ni Aeru'));
+songList[0].lyric.push(new Lyrics(22.5, 28.3, 'Sono Mukou de Kitto Anata ni Aeru'));
 songList[0].lyric.push(new Lyrics(28.5, 35.4, 'Kurikaesu Ayamachi no Sonotabi Hito wa'));
 songList[0].lyric.push(new Lyrics(35.5, 40.4, 'Tada Aoi Sora no Aosa wo Shiru'));
 songList[0].lyric.push(new Lyrics(40.5, 47, 'Hateshinaku Michi wa Tsuzuite Mieru keredo'));
