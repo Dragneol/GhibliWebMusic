@@ -127,6 +127,50 @@ function decorateList() {
     }
 }
 
+function confirgLyric() {
+    var runBar = document.getElementById("word1");
+    if (playStatus) {
+        runBar.style.opacity = "1";
+        var lyric = document.getElementById("lyricBar");
+        switch (idPlayer) {
+            case 0:
+                lyric.style.left = "30%";
+                lyric.style.bottom = "25%";
+                break;
+            case 1:
+                lyric.style.left = "70%";
+                lyric.style.bottom = "75%";
+                break;
+            case 2:
+                lyric.style.left = "30%";
+                lyric.style.bottom = "75%";
+                break;
+            case 3:
+                lyric.style.left = "30%";
+                lyric.style.bottom = "50%";
+                break;
+            case 4:
+                lyric.style.left = "0%";
+                lyric.style.bottom = "0%";
+                break;
+            case 5:
+                lyric.style.left = "25%";
+                lyric.style.bottom = "60%";
+                break;
+            case 6:
+                lyric.style.left = "30%";
+                lyric.style.bottom = "25%";
+                break;
+            case 7:
+                lyric.style.left = "0%";
+                lyric.style.bottom = "0%";
+                break;
+        }
+    } else {
+        runBar.style.opacity = "0";
+    }
+}
+
 function playASong() {
     playStatus = true;
     stt = 0;
@@ -138,7 +182,9 @@ function playASong() {
     screen.firstElementChild.src = "" + songList[idPlayer].img;
     var controller = document.getElementById("musicPlayer");
     controller.src = songList[idPlayer].mp3;
+    confirgLyric();
     controller.play();
+
 }
 
 function play(id) {
@@ -208,6 +254,7 @@ function runProcess() {
         buttonPlay.style.visibility = "visible";
         audio.pause();
     }
+    confirgLyric();
 }
 
 function updateProgress() {

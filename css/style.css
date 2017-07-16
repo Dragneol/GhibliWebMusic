@@ -42,7 +42,7 @@
 }
 
 body {
-    font-family: courgette, sans-serif, fontawesome-web!important;
+    font-family: sans-serif!important;
     margin: 0;
     overflow: auto;
     width: 100%;
@@ -1121,7 +1121,7 @@ a:hover {
 
 #lyricBar {
     position: absolute;
-    width: 23em;
+    width: 26em;
     height: 2.5em;
     left: 30%;
     bottom: 25%;
@@ -1132,12 +1132,12 @@ a:hover {
 #lyric {
     width: 23em;
     height: 2em;
-    font-size: 1em;
+    font-size: 1.25em;
     /*color: #87CEEB;*/
     color: white;
     font-family: monospace, monospace;
     position: absolute;
-    text-align: center;
+    /* text-align: center; */
     top: 50%;
     /* left: 50%; */
     transform: translate(0%, -50%);
@@ -1174,6 +1174,7 @@ a:hover {
 
 #word1 {
     position: relative;
+    opacity: 0;
     animation: rolling1 3s infinite;
 }
 
